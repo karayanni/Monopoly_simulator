@@ -1,17 +1,19 @@
 import random
+import destinations as d
 
 starting_cash = 1500
 
 
 class Player:
-    def __init__(self):
+    def __init__(self,destinations : d.destinations):
         self.place_on_board = 0
         self.cash = starting_cash
         self.in_jail = False
         self.destinations = []
         self.waiting = 0
+        self.destinations = destinations
 
-    def steps(self,waiting_turn):
+    def steps(self):
         
         first_dice = random.randint(1, 6)
         second_dice = random.randint(1, 6)
@@ -28,7 +30,12 @@ class Player:
                 second_dice = random.randint(1, 6)
 
         self.place_on_board += first_dice + second_dice
+        if self.place_on_board >= 40:
+            self.cash += 200
         self.place_on_board %= 40
+
+        if self.place_on_board in self.destinations.surprises_cards:
+            
 
     def go_to_jail(self):
         self.in_jail = True
