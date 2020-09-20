@@ -34,8 +34,8 @@ class Player:
             self.cash += 200
         self.place_on_board %= 40
 
-        if self.place_on_board in self.destinations.surprises_cards:
-            
+        #if self.place_on_board in self.destinations.surprises_cards:
+
 
     def go_to_jail(self):
         self.in_jail = True
