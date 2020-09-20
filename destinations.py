@@ -5,7 +5,7 @@ class destinations:
         each destination on the board is defined by a number 0-39
         special destinations such as surprises and lucky boxes are saved in lists accordingly 
     '''
-    def __init__(self, number_of_player: int):
+    def __init__(self):
         self.surprises_cards = [7 ,22 ,36]
         self.luck_box_cards = [2 , 17 ,33]
         self.taxes = dict([(4,200),(38,100)])

@@ -1,12 +1,14 @@
-import Board
-import  destinations
+import Board as b
+import  destinations as d
+import  cards as c
 
+s = input("please enter number of players between 3 and 6:")
 while True:
-    s = input("please enter number of players:")
-    if s > 6 or s < 3:
+    if int(s) > 6 or int(s) < 2:
+        s = input("please enter a valid number of players:")
         continue
     else:
         break
 
-board = Board(s)
-dest = destinations()
+board = b.Board(s)
+print(board)
