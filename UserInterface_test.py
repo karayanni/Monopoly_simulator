@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template("nader.html")
+    return render_template("home.html")
 
 @app.route("/<num_players>")
 def start(num_players):
@@ -18,13 +18,13 @@ def test():
 def about():
     return render_template("about.html")
 
-@app.route('/pornhub')
-def pornhub():
-    return redirect("https://me.me/i/why-are-you-that-horny-9615a7eeb02f4dd89d653089991f7f66")
+@app.route('/nader')
+def nader():
+    return redirect("https://www.facebook.com/nader.karayanni")
 
-@app.route('/play')
-def play():
-    return render_template("play.html")
+@app.route('/simulate')
+def simulate():
+    return render_template("simulate.html")
 
 
 

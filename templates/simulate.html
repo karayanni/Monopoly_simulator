@@ -13,7 +13,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="/pornhub">pornhub</a>
+            <a class="navbar-brand" href="/nader">nader</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -23,7 +23,7 @@
                   <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/play">play</a>
+                  <a class="nav-link" href="/simulate">start simulation</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/about">about</a>
@@ -50,12 +50,27 @@
             <option value="3">6</option>
             </select>
         </div>
+        <p>&nbsp;</p>
         <p>&nbsp;</p> 
         <div class="input-group flex-nowrap">
             <div class="input-group-prepend">
               <span class="input-group-text" id="addon-wrapping">number_of_steps</span>
             </div>
-            <input name="number_of_steps" type="number" class="form-control" placeholder="enter here" aria-label="Username" aria-describedby="addon-wrapping">
+            <input name="num_of_steps" type="number" class="form-control" placeholder="enter here" aria-label="Username" aria-describedby="addon-wrapping">
         </div>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">starting_cash</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01">
+          <option selected>optional</option>
+          <option value="1">1500 (default)</option>
+          <option value="2">1000</option>
+          <option value="3">2000</option>
+          <option value="3">2500</option>
+          </select>
+      </div>
     </body>
 </html>
