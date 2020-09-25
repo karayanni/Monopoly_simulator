@@ -1,8 +1,6 @@
 import Board as b
 import  destinations as d
 import  cards as c
-import cgi
-import cgitb
 
 
 s = input("please enter number of players between 3 and 6:")
