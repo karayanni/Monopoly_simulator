@@ -1,5 +1,5 @@
 from flask import Flask , redirect , url_for,render_template,request
-from time import sleep
+
 
 app = Flask(__name__)
 
@@ -27,7 +27,8 @@ def get_num_of_steps():
     starting_cash = request.form['starting_cash']
     num_of_players = request.form.get('selected_num_players')
     print(num_of_steps,starting_cash)
-    return render_template("test.html",num_of_steps=num_of_steps,starting_cash=starting_cash,num_of_players=num_of_players)
+    return render_template("monopoly.html")
+    #return render_template("test.html",num_of_steps=num_of_steps,starting_cash=starting_cash,num_of_players=num_of_players)
 
 
 
