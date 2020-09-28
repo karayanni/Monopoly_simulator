@@ -1,14 +1,12 @@
 from flask import Flask , redirect , url_for,render_template,request
 
+
 app = Flask(__name__)
 
 @app.route("/")
 def home():
     return render_template("home.html")
 
-@app.route("/<num_players>")
-def start(num_players):
-    return f"{num_players} your ass get your ass back to home screen"
 
 @app.route("/about")
 def about():
@@ -20,6 +18,16 @@ def simulate():
 
 
 
+@app.route('/simulate',methods = ['POST'])
+def get_num_of_steps():
+    num_of_steps = request.form['num_of_steps']
+    starting_cash = request.form['starting_cash']
+    num_of_players = request.form.get('selected_num_players')
+    print(num_of_steps,starting_cash)
+    return render_template("home.html")
+
+
+
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

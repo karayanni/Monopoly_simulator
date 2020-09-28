@@ -8,9 +8,18 @@
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        
         <title>monopoly simulator</title>
         <style type="text/css">
+          input[type = "submit"]{
+            border-radius: 25px 25px 25px 25px;
+            width: 150px;
+            height: 50px;
+            color: white;
+            border:None;
+            outline: none;
+            cursor: pointer;
+            background: rgb(41, 43, 44);
+          }
           nav {
             animation: nav-load 600ms;
           }
@@ -42,59 +51,69 @@
         </style>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="/">Home</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-              <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <a class="nav-link" href="/simulate">start simulation</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/about">about</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        <h1>enjoy!</h1>
-        <p>&nbsp;</p>
-        
+      <!-- navigation bar-->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="/">Home</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="/simulate">start simulation</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about">about</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      <h1>enjoy!</h1>
+
+      <p>&nbsp;</p>
+
+      <form name="passdata" action="/simulate" method="post">
         <div class="input-group mb-3">
-            <div class="input-group-prepend">
+          <div class="input-group-prepend">
             <label class="input-group-text" for="inputGroupSelect01">number_of_players</label>
-            </div>
-            <select class="custom-select" id="inputGroupSelect01">
+          </div>
+          <select class="custom-select" id="inputGroupSelect01" name="selected_num_players">
             <option selected>Choose...</option>
-            <option value="1">3</option>
-            <option value="2">4</option>
-            <option value="3">5</option>
-            <option value="3">6</option>
-            </select>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
         </div>
+
         <p>&nbsp;</p>
         <p>&nbsp;</p> 
+
         <div class="input-group flex-nowrap">
             <div class="input-group-prepend">
               <span class="input-group-text" id="addon-wrapping">number_of_steps</span>
             </div>
-            <input name="num_of_steps" type="number" class="form-control" placeholder="enter here" aria-label="Username" aria-describedby="addon-wrapping">
+          <input name="num_of_steps" type="number" class="form-control" placeholder="enter here">
         </div>
+
         <p>&nbsp;</p>
         <p>&nbsp;</p>
-        <div class="input-group mb-3">
+
+        <div class="input-group flex-nowrap">
           <div class="input-group-prepend">
-          <label class="input-group-text" for="inputGroupSelect01">starting_cash</label>
+            <span class="input-group-text" id="addon-wrapping">starting cash</span>
           </div>
-          <select class="custom-select" id="inputGroupSelect01">
-          <option selected>optional</option>
-          <option value="1">1500 (default)</option>
-          <option value="2">1000</option>
-          <option value="3">2000</option>
-          <option value="3">2500</option>
-          </select>
-      </div>
+          <input name="starting_cash" type="number" class="form-control" placeholder="enter here(recommended between 1000 and 2500">
+        </div>
+
+        <p>&nbsp;</p>
+
+        <div class = "btn">
+          <input class="button" type="submit" name = "submit">
+        </div>
+
+      </form>
+      
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
