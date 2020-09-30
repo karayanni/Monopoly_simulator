@@ -1,5 +1,5 @@
 from flask import Flask , redirect , url_for,render_template,request
-from time import sleep
+
 
 app = Flask(__name__)
 
@@ -16,13 +16,9 @@ def about():
 def simulate():
     return render_template("simulate.html")
 
-@app.route("/img")
-def img():
+@app.route("/simpage")
+def simpage():
     return render_template("monopoly.html")
-
-@app.route("/exit")
-def exit():
-    return render_template("exit.html")
 
 
 @app.route('/simulate',methods = ['POST'])
@@ -34,14 +30,7 @@ def get_num_of_steps():
     return render_template("monopoly.html",num_of_players=num_of_players,num_of_steps=num_of_steps)
 
 
-@app.route("/test")
-def test():
-    return render_template("temp.html",bedat=temp)
-
-
-
 
 if __name__ == "__main__":
     app.run(debug=True)
 
-f"{jdj} dhhd"
