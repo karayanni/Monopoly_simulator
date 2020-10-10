@@ -14,11 +14,17 @@
             border-radius: 25px 25px 25px 25px;
             width: 150px;
             height: 50px;
-            color: white;
-            border:None;
+            color: rgb(41, 43, 44);
+            border: 2px solid rgb(41, 43, 44);
             outline: none;
             cursor: pointer;
-            background: rgb(41, 43, 44);
+            display: inline-block;
+            transition-duration: 0.4s;
+            background: white;
+          }
+          input[type = "submit"]:hover{
+            background-color: rgb(41, 43, 44);
+            color: white;
           }
           nav {
             animation: nav-load 600ms;
@@ -78,7 +84,7 @@
             <label class="input-group-text" for="inputGroupSelect01">number_of_players</label>
           </div>
           <select class="custom-select" id="inputGroupSelect01" name="selected_num_players">
-            <option selected>Choose...</option>
+            <option value="4" selected>Choose...  (4 is default)</option>
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
@@ -87,7 +93,6 @@
         </div>
 
         <p>&nbsp;</p>
-        <p>&nbsp;</p> 
 
         <div class="input-group flex-nowrap">
             <div class="input-group-prepend">
@@ -97,13 +102,12 @@
         </div>
 
         <p>&nbsp;</p>
-        <p>&nbsp;</p>
 
         <div class="input-group flex-nowrap">
           <div class="input-group-prepend">
             <span class="input-group-text" id="addon-wrapping">starting cash</span>
           </div>
-          <input name="starting_cash" type="number" class="form-control" placeholder="enter here(recommended between 1000 and 2500">
+          <input name="starting_cash" type="number" class="form-control" placeholder="enter here                                                                                                                                                                   (recommended between 1000 and 2500)">
         </div>
 
         <p>&nbsp;</p>
