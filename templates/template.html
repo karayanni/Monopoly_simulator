@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <style type="text/css">
-        nav {
+        nav.animate {
             animation: nav-load 600ms;
         }
 
@@ -40,26 +40,30 @@
             }
         }
     </style>
+
     {% block Head %}
     {% endblock %}
     <script src="static/js/httpClient.js"></script>
     <script type="text/javascript">
-        httpClient.get('https://simaan-saada.com/api/checkBrowser', null, function (xhr) {
-            //console.log( JSON.parse( xhr.responseText ) );
-            var gists = JSON.parse(xhr.responseText);
-            var list = [];
-            for (var i = 0; i < gists.length; i++) {
-                list.push({ Url: gists[i].html_url, Description: gists[i].description });
-            }
-            console.log(gists);
-        });
+
+        // httpClient.get('https://simaan-saada.com/api/checkBrowser', null, function (xhr) {
+        //     //console.log( JSON.parse( xhr.responseText ) );
+        //     var gists = JSON.parse(xhr.responseText);
+        //     var list = [];
+        //     for (var i = 0; i < gists.length; i++) {
+        //         list.push({ Url: gists[i].html_url, Description: gists[i].description });
+        //     }
+        //     console.log(gists);
+        // });
+
+
     </script>
 </head>
 
 <body>
 
     <!-- navigation bar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="/">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -92,6 +96,16 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
+    <script>
+        const newUserKey = 'newUser';
+        console.log(sessionStorage.getItem(newUserKey));
+        if (sessionStorage.getItem(newUserKey) === null) {
+            sessionStorage.setItem(newUserKey, true);
+            document.getElementById('mainNav').classList.add('animate');
+        } else {
+            sessionStorage.setItem(newUserKey, false);
+        }
+    </script>
 </body>
 
 </html>
