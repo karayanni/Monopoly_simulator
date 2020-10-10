@@ -1,0 +1,65 @@
+{% extends "template.html" %}
+
+{% block Head%}
+<title> simulation </title>
+<style type="text/css">
+    #img {
+        position: relative;
+        visibility: visible;
+        left: 830px;
+        top: 10px;
+        height: 100px;
+        width: 150px;
+        z-index: 200;
+    }
+
+    #current_status {
+        left: 10px;
+        margin-top: 70px;
+        z-index: 200;
+    }
+
+    .stop_simulation {
+        background-color: white;
+        border: 2px solid rgb(41, 43, 44);
+        color: rgb(41, 43, 44);
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 50px;
+    }
+
+    .stop_simulation:hover {
+        background-color: rgb(41, 43, 44);
+        color: white;
+    }
+</style>
+
+{% endblock %}
+{% block Content %}
+<div class="container-fluid animate-from-right">
+
+    <!-- monoply board image-->
+    <div id=img>
+        <img src="static/monopoly-template.jpg" alt="tzbarna">
+    </div>
+    <!-- stop simulation button-->
+    <form action="/">
+        <button class="stop_simulation" type="submit" name="exit simulation"> stop simulation </button>
+    </form>
+
+    <!-- current status data-->
+    <div id=current_status>
+        <p style="font-size: 20px;font-family: verdana;color: rgb(64, 64, 64);">number of players: {{num_of_players}}
+        </p>
+        <p style="font-size: 20px;font-family: Verdana;color: rgb(64, 64, 64);">current number of steps:{{num_of_steps}}
+        </p>
+    </div>
+</div>
+
+{% endblock%}

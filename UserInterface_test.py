@@ -14,20 +14,20 @@ def about():
 
 @app.route('/simulate')
 def simulate():
-    return render_template("simulate.html")
+    return render_template("simulation-input.html")
 
 @app.route("/simpage")
 def simpage():
-    return render_template("monopoly.html")
+    return render_template("simulation_page.html")
 
 
-@app.route('/simulate',methods = ['POST'])
+@app.route('/simulation-input',methods = ['POST'])
 def get_num_of_steps():
     num_of_players = request.form.get('selected_num_players')
     num_of_steps = request.form['num_of_steps']
     starting_cash = request.form['starting_cash']
     print(num_of_steps,starting_cash)
-    return render_template("monopoly.html",num_of_players=num_of_players,num_of_steps=num_of_steps)
+    return render_template("simulation_page.html",num_of_players=num_of_players,num_of_steps=num_of_steps)
 
 
 

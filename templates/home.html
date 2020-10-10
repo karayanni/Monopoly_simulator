@@ -15,8 +15,20 @@
       
       .jumbotron {
         animation: transitionid 900ms;
+        background-image: url('static/monopoly_home.jpg') ;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        filter: blur(4px);
+        -webkit-filter: blur(4px);
+        padding-top: 20%;
+        padding-bottom: 15%;
       }
 
+      .description{
+        animation: transitionid 900ms;
+        text-align: left;
+      }
       @keyframes nav-load{
           0%{
               transform: translateY(-100%);
@@ -40,7 +52,7 @@
     </style>
   </head>
   <body>
-    
+
     <!-- navigation bar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="/">Home</a>
@@ -58,15 +70,24 @@
         </ul>
       </div>
     </nav>
-    
-    <!-- welcome panel -->
-    <div class="jumbotron">
-      <h1 class="display-4">welcome to monopoly simulator!</h1>
-      <p class="lead">to do ...</p>
-      <hr class="my-4">
-      <p>to do...</p>
-      <a class="btn btn-dark btn-lg" href="/about" role="button">Learn more</a>
+
+
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4"></h1>
+        <p class="lead"></p>
+      </div>
     </div>
+    
+    
+    
+    <div class="container-fluid description">
+      <h1 style="text-align: center;">here's what we offer</h1>
+      <p>1) to do...</p>
+      <p>2) to do...</p>
+      <p>3) to do...</p>
+    </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
