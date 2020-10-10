@@ -1,0 +1,77 @@
+{% extends "template.html" %}
+
+{% block Head %}
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<title>monopoly simulator</title>
+<style type="text/css">
+  input[type="submit"] {
+    border-radius: 25px 25px 25px 25px;
+    width: 150px;
+    height: 50px;
+    color: rgb(41, 43, 44);
+    border: 2px solid rgb(41, 43, 44);
+    outline: none;
+    cursor: pointer;
+    display: inline-block;
+    transition-duration: 0.4s;
+    background: white;
+  }
+
+  input[type="submit"]:hover {
+    background-color: rgb(41, 43, 44);
+    color: white;
+  }
+</style>
+{% endblock %}
+{% block Content %}
+<div class="container-fluid animate-from-right">
+
+  <h1>enjoy!</h1>
+
+  <p>&nbsp;</p>
+
+  <form name="passdata" action="/simulation-input" method="post">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="inputGroupSelect01">number_of_players</label>
+      </div>
+      <select class="custom-select" id="inputGroupSelect01" name="selected_num_players">
+        <option value="4" selected>Choose... (4 is default)</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+    </div>
+
+    <p>&nbsp;</p>
+
+    <div class="input-group flex-nowrap">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="addon-wrapping">number_of_steps</span>
+      </div>
+      <input name="num_of_steps" type="number" class="form-control" placeholder="enter here">
+    </div>
+
+    <p>&nbsp;</p>
+
+    <div class="input-group flex-nowrap">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="addon-wrapping">starting cash</span>
+      </div>
+      <input name="starting_cash" type="number" class="form-control"
+        placeholder="enter here                                                                                                                                                                   (recommended between 1000 and 2500)">
+    </div>
+
+    <p>&nbsp;</p>
+
+    <div class="btn">
+      <input class="button" type="submit" name="submit">
+    </div>
+
+  </form>
+</div>
+
+{% endblock %}
