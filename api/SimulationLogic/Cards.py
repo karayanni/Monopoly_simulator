@@ -1,4 +1,4 @@
-import player as p
+from api.SimulationLogic import player as p
 import random
 
 class Special_Cards:
@@ -9,4 +9,5 @@ class Special_Cards:
         self.surprise_cards = []
 
     def get_surprise_card(self):
-        temp = random.randint(1,20)
+        rand_card_index = random.randint(0,19)
+        return self.surprise_cards[rand_card_index]

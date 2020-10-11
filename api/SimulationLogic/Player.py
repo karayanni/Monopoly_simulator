@@ -1,17 +1,14 @@
 import random
-import destinations as d
-
-starting_cash = 1500
+from api.SimulationLogic import Destinations as d
 
 
 class Player:
-    def __init__(self,destinations : d.destinations):
+    def __init__(self, starting_cash: int):
         self.place_on_board = 0
         self.cash = starting_cash
         self.in_jail = False
         self.destinations = []
         self.waiting = 0
-        self.destinations = destinations
 
     def steps(self):
         
@@ -20,7 +17,7 @@ class Player:
         
         if self.in_jail:
             self.waiting += 1 
-            if self.waiting_turn == 4:
+            if self.waiting == 4:
                 self.in_jail = False
                 self.waiting = 0
             elif first_dice == second_dice :
@@ -47,7 +44,7 @@ class Player:
             self.in_jail = False
             self.waiting = 0
         else:
-            print("dont have enough money to get out of jail")
+            print("don't have enough money to get out of jail")
 
     def buy(self,dest,price):
         if self.cash < price:

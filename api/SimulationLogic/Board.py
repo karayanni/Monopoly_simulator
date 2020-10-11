@@ -1,16 +1,15 @@
-import player as p
+from api.SimulationLogic.Player import Player
 
 
 class Board:
-    def __init__(self, number_of_player: int):
+    def __init__(self):
 
-        self.num_of_players = number_of_player
         self.destinations = [0] * 40
         self.visits = dict([(i,0) for i in range(40)])
 
 
-    def visit(self,place_on_board):
-        self.visits[place_on_board] = self.visits.get(place_on_board,0) + 1
+    def visit(self,place_on_board: int):
+        self.visits[place_on_board] = self.visits[place_on_board] + 1
 
     def __repr__(self):
         res = f"{self.visits[20]} {self.visits[21]} {self.visits[22]} {self.visits[23]} {self.visits[24]} {self.visits[25]} {self.visits[26]} {self.visits[27]} {self.visits[28]} {self.visits[29]} {self.visits[30]}\n"
@@ -25,5 +24,3 @@ class Board:
         res +=  f"{self.visits[11]}                   {self.visits[39]}\n"
         res += f"{self.visits[10]} {self.visits[9]} {self.visits[8]} {self.visits[7]} {self.visits[6]} {self.visits[5]} {self.visits[4]} {self.visits[3]} {self.visits[2]} {self.visits[1]} {self.visits[0]}\n"
         return res
-
-    
