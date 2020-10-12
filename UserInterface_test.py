@@ -12,11 +12,11 @@ def home():
 def about():
     return render_template("about.html")
 
-@app.route('/simulate')
+@app.route('/simulation-input')
 def simulate():
     return render_template("simulation-input.html")
 
-@app.route("/simpage")
+@app.route("/simulation_page")
 def simpage():
     return render_template("simulation_page.html")
 
